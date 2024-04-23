@@ -8,7 +8,7 @@ const binarySearch = function (arr, item) {
     const mid = Math.floor((low + high) / 2);
     const guess = arr[mid];
 
-    if (guess === item) return `We Found it!`;
+    if (guess === item) return item;
     if (guess < item) low = mid + 1;
     if (guess > item) high = mid - 1;
   }

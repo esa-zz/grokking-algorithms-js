@@ -1,0 +1,23 @@
+{
+  "name": "grokking-algorithms",
+  "version": "1.0.0",
+  "description": "contains JavaScript implementations of algorithms from the book \"Grokking Algorithms\" by Aditya Bhargava. Each algorithm is implemented in JavaScript to help you understand and apply the concepts presented in the book.",
+  "type": "module",
+  "main": "README.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esa-zz/grokking-algorithms-js.git"
+  },
+  "keywords": [
+    "algorithm"
+  ],
+  "author": "esa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/esa-zz/grokking-algorithms-js/issues"
+  },
+  "homepage": "https://github.com/esa-zz/grokking-algorithms-js#readme"
+}

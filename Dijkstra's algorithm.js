@@ -38,12 +38,15 @@ parents.set("FIN", null);
 function findLowestCostNode(costs) {
   let lowestCost = Infinity;
   let lowestCostNode = null;
-  for (const [node, cost] of costs) {
-    if (cost < lowestCost && !processed.has(node)) {
+  costs.forEach((cost, node) => {
+    const notProcessed = !processed.has(node);
+    const cheapest = cost < lowestCost;
+    if (notProcessed && cheapest) {
       lowestCost = cost;
       lowestCostNode = node;
     }
-  }
+  });
+
   return lowestCostNode;
 }
 
@@ -54,27 +57,33 @@ while (node !== null) {
   let cost = costs.get(node);
   let neighbors = graph.get(node);
 
-  for (let [neighbor, neighborCost] of neighbors) {
+  neighbors.forEach((neighborCost, neighbor) => {
     const newCost = cost + neighborCost;
     if (costs.get(neighbor) > newCost) {
       costs.set(neighbor, newCost);
       parents.set(neighbor, node);
     }
-  }
+  });
+
   processed.add(node);
   node = findLowestCostNode(costs);
 }
 
 // Displaying the final costs and paths to reach each node
-for (let node of costs.keys()) {
+Array.from(costs.keys()).forEach((node) => {
   let cost = costs.get(node);
   let path = [];
-  for (let parent = parents.get(node); parent; parent = parents.get(parent)) {
+  let parent = parents.get(node); // Initialize the parent variable outside the loop
+
+  while (parent) {
+    // Loop continues as long as 'parent' is truthy
     path.push(parent);
+    parent = parents.get(parent); // Update the parent to its own parent
   }
+
   console.log(
     `Cost to reach ${node}: ${cost}, Path: ${path
       .reverse()
       .join(" -> ")} -> ${node}`
   );
-}
+});

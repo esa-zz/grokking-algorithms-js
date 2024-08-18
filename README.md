@@ -19,9 +19,11 @@ This repository contains JavaScript implementations of algorithms from the book 
 - Binary Search
 - Selection Sort
 - Quicksort
-- ...
-
-(Add more algorithms as you implement them)
+- Breadth-First Search
+- Queue
+- Dijkstra's Algorithm
+- The set-covering problem
+  and more to come!
 
 ## Usage
 
@@ -30,6 +32,7 @@ To use the algorithms in your project, simply clone this repository:
 ```bash
 git clone https://github.com/yourusername/GrokkingAlgorithms-JS.git
 ```
+
 ## Contributing
 
 Contributions are welcome! If you'd like to contribute an algorithm implementation or improve existing ones, please follow these steps:
@@ -45,5 +48,7 @@ Please ensure your code follows the existing style and includes appropriate docu
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ```
 Feel free to customize it further based on your preferences and the specific content of your repository!
+```
